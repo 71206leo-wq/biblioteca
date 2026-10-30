@@ -1,0 +1,86 @@
+/* ==========================================
+   ESTILOS GENERALES Y TEMA HALLOWEEN
+   ========================================== */
+
+/* Fondo global y tipografía */
+body {
+    background-color: #0f0e17;
+    color: #a7a9be;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Tarjeta principal donde se aloja el contenido */
+.container-fluid {
+    max-width: 900px;
+    background-color: #16161a;
+    border: 1px solid #2cb67d22;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 107, 0, 0.05);
+}
+
+/* ==========================================
+   ENCABEZADOS Y TEXTO (Vistas individuales)
+   ========================================== */
+
+/* Títulos H1 de todas las páginas */
+h1 {
+    color: #ff6b00;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #72757e;
+    padding-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+}
+
+/* Párrafos de información */
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #fffffe;
+    margin-bottom: 1rem;
+}
+
+/* Resaltar datos de contacto o detalles */
+p:last-child {
+    color: #94b0c2;
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN (layout.html)
+   ========================================== */
+
+.nav {
+    border-bottom: 1px solid #2b2c34;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.nav-item {
+    margin-right: 0.5rem;
+}
+
+.nav-link {
+    color: #a7a9be !important;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+/* Efecto hover en menú */
+.nav-link:hover {
+    color: #ff6b00 !important;
+    background-color: rgba(255, 107, 0, 0.1);
+}
+
+/* Enlace activo */
+.nav-link.active {
+    color: #fffffe !important;
+    background-color: #7f5af0 !important;
+    box-shadow: 0 0 10px rgba(127, 90, 240, 0.4);
+}
