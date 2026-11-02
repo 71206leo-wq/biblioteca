@@ -84,3 +84,87 @@ p:last-child {
     background-color: #7f5af0 !important;
     box-shadow: 0 0 10px rgba(127, 90, 240, 0.4);
 }
+
+.biblioteca-navbar {
+    background-color: #16161a;
+    border-bottom: 1px solid #2b2c34;
+    margin-bottom: 2rem;
+}
+
+.biblioteca-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.search-icon {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2;
+}
+
+.services-page .section-title {
+    color: #fffffe;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.services-page .product-card,
+.services-page .service-card {
+    background-color: #202127;
+    border: 1px solid #2b2c34;
+    color: #fffffe;
+}
+
+.services-page .product-card {
+    max-width: 540px;
+    margin: 0 auto 2rem;
+}
+
+.services-page .product-image {
+    height: 320px;
+    object-fit: contain;
+    padding: 1rem;
+    background-color: #fffffe;
+}
+
+.services-page .card-title {
+    color: #ff6b00;
+    font-size: 1.15rem;
+}
+
+.services-page .card-text {
+    color: #a7a9be;
+    font-size: 1rem;
+}
+
+.services-page .carousel-indicators {
+    bottom: 0;
+}
+
+.services-page .carousel-indicators li {
+    background-color: #ff6b00;
+}
+
+.services-page .carousel-control-prev,
+.services-page .carousel-control-next {
+    width: 10%;
+}
+
+@media (max-width: 575.98px) {
+    .biblioteca-navbar .form-inline {
+        align-items: stretch;
+    }
+
+    .biblioteca-navbar input[type="search"] {
+        flex: 1;
+    }
+
+    .services-page .product-image {
+        height: 260px;
+    }
+}

@@ -1,8 +1,93 @@
 {% extends 'layout.html' %}
 {% block content %}
-        <div class="container-fluid">
-       <h1>Servicios</h1>
-        <p>Hola, bienvenido a nuestros servicios</p>
-        <p>contamos con prestamo de libros, consulta en sala, acceso a recursos digitales, orientación y asistencia</p>
+<section class="services-page">
+    <header class="text-center mb-4">
+        <h1>Servicios de la biblioteca</h1>
+        <p>Préstamo de libros, consulta en sala, recursos digitales y orientación para tus proyectos.</p>
+    </header>
+
+    <section aria-labelledby="productos-title">
+        <h2 id="productos-title" class="section-title">Productos destacados</h2>
+        <div id="productosCarousel" class="carousel slide" data-ride="carousel" data-interval="4500">
+            <ol class="carousel-indicators">
+                <li data-target="#productosCarousel" data-slide-to="0" class="active" aria-label="Libro 1"></li>
+                <li data-target="#productosCarousel" data-slide-to="1" aria-label="Libro 2"></li>
+                <li data-target="#productosCarousel" data-slide-to="2" aria-label="Libro 3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <article class="card product-card">
+                        <img src="{{ url_for('imagen', filename='productos/libro 1.jpg') }}" class="card-img-top product-image" alt="Portada del libro 1">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Libro destacado 1</h3>
+                            <p class="card-text">Descubre una nueva lectura en el catálogo de la biblioteca.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="carousel-item">
+                    <article class="card product-card">
+                        <img src="{{ url_for('imagen', filename='productos/libro 2.jpg') }}" class="card-img-top product-image" alt="Portada del libro 2">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Libro destacado 2</h3>
+                            <p class="card-text">Encuentra títulos para aprender, explorar y disfrutar.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="carousel-item">
+                    <article class="card product-card">
+                        <img src="{{ url_for('imagen', filename='productos/libro 3.jpg') }}" class="card-img-top product-image" alt="Portada del libro 3">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Libro destacado 3</h3>
+                            <p class="card-text">Consulta este y muchos otros recursos disponibles.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#productosCarousel" role="button" data-slide="prev" aria-label="Producto anterior">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#productosCarousel" role="button" data-slide="next" aria-label="Producto siguiente">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
         </div>
+    </section>
+
+    <section class="mt-5" aria-labelledby="servicios-title">
+        <h2 id="servicios-title" class="section-title">Nuestros servicios</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-3">
+                <article class="card service-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Préstamo de libros</h3>
+                        <p class="card-text">Lleva tus lecturas favoritas y consulta las condiciones de préstamo.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+                <article class="card service-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Consulta en sala</h3>
+                        <p class="card-text">Disfruta de un espacio cómodo para leer y estudiar.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+                <article class="card service-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Recursos digitales</h3>
+                        <p class="card-text">Accede a materiales digitales para apoyar tu aprendizaje.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+                <article class="card service-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Orientación</h3>
+                        <p class="card-text">Recibe ayuda para encontrar información y usar los recursos.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</section>
 {% endblock %}

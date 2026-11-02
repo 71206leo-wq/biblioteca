@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="sp">
     <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{titulo}}</title>
+        <link rel="icon" href="{{ url_for('imagen', filename='logo.jpg') }}" type="image/jpeg">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-   
-        <div class="container-fluid">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{url_for('home')}}">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('servicios')}}">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('catalogo')}}">Catalogos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('contacto')}}">Contactos</a>
-                </li>
-            </ul>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark biblioteca-navbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+                    <img class="biblioteca-logo mr-2" src="{{ url_for('imagen', filename='logo.jpg') }}" alt="Logo de la biblioteca">
+                    <span>Biblioteca</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bibliotecaNav"
+                        aria-controls="bibliotecaNav" aria-expanded="false" aria-label="Mostrar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="bibliotecaNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('servicios') }}">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('catalogo') }}">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('contacto') }}">Contacto</a></li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0" action="{{ url_for('catalogo') }}" method="get" role="search">
+                        <input class="form-control mr-sm-2" type="search" name="q" placeholder="Buscar libros"
+                               aria-label="Buscar libros">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" aria-label="Buscar">
+                            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                 aria-hidden="true">
+                                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                                <path d="m16 16 5 5"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <main class="container-fluid site-content">
             {% block content %}
             {% endblock %}
-
-        </div>
-        </body>
-        
-           
+        </main>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+                crossorigin="anonymous"></script>
+    </body>
 </html>

@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+import os
+
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
@@ -18,6 +20,12 @@ def contacto():
 @app.route('/catalogo')
 def catalogo():
     return render_template('catalogo.html', titulo='Catálogo', mensaje='Bienvenido al catálogo de la biblioteca')
+
+
+@app.route('/img/<path:filename>')
+def imagen(filename):
+    return send_from_directory(os.path.join(app.root_path, 'img'), filename)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port = 8000)
